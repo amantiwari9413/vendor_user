@@ -27,7 +27,8 @@ const SearchResults = () => {
                 price: product.itemPrice,
                 category: product.categoryId,
                 image: product.itemImg,
-                vendorName: product.vendorId.name
+                vendorName: product.vendorId.name,
+                vendorId: product.vendorId._id
               }}
             />
           ))}

@@ -12,6 +12,10 @@ import CategoryProducts from './components/CategoryProducts';
 import Cart from './components/Cart';
 import Vendors from './components/Vendors';
 import VendorCategories from './components/VendorCategories';
+import ProductList from './components/ProductList';
+import Checkout from './components/Checkout';
+import OrderSuccess from './components/OrderSuccess';
+import UserOrders from './components/UserOrders';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -77,6 +81,38 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Cart />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/category/:categoryId/products"
+                element={
+                  <ProtectedRoute>
+                    <ProductList />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/checkout"
+                element={
+                  <ProtectedRoute>
+                    <Checkout />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/order-success"
+                element={
+                  <ProtectedRoute>
+                    <OrderSuccess />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/orders"
+                element={
+                  <ProtectedRoute>
+                    <UserOrders />
                   </ProtectedRoute>
                 }
               />

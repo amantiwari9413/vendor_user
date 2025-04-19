@@ -15,6 +15,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    localStorage.removeItem('userId');
     navigate('/signin');
   };
 
@@ -118,6 +119,12 @@ const Navbar = () => {
             </button>
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
+                <Link
+                  to="/orders"
+                  className="text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Orders
+                </Link>
                 <span className="text-gray-900 dark:text-gray-100">
                   Welcome, {user?.UserData?.userName || 'User'}
                 </span>

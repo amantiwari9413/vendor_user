@@ -1,9 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../redux/slices/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { items, totalItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleQuantityChange = (id, newQuantity) => {
     if (newQuantity > 0) {
@@ -17,6 +19,10 @@ const Cart = () => {
 
   const calculateTotal = () => {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
+  const handleCheckout = () => {
+    navigate('/checkout');
   };
 
   return (
@@ -107,7 +113,10 @@ const Cart = () => {
                       </span>
                     </div>
                   </div>
-                  <button className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors duration-300">
+                  <button 
+                    onClick={handleCheckout}
+                    className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors duration-300"
+                  >
                     Proceed to Checkout
                   </button>
                 </div>

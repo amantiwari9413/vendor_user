@@ -26,16 +26,6 @@ const Vendors = () => {
 
     fetchVendors();
   }, []);
-
-  // Category images mapping
-  const categoryImages = {
-    'GROSARY': 'https://images.unsplash.com/photo-1601597111151-718bcfe32a4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-    'ELECTRONICS': 'https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-    'CLOTHING': 'https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-    'FOOD': 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-    'DEFAULT': 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen bg-white dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">

@@ -26,11 +26,10 @@ const SignIn = () => {
       });
 
       const data = await response.json();
-      console.log('Login response:', data); // Debug log
-
       if (data.success) {
-        console.log('User data:', data.data); // Debug log
         dispatch(loginSuccess(data.data));
+        // Store user ID in localStorage
+        localStorage.setItem('userId', data.data.UserData.user_id);
         // Redirect to the page they were trying to access or home
         const from = location.state?.from?.pathname || '/';
         navigate(from, { replace: true });

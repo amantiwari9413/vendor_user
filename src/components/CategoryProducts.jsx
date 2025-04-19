@@ -63,7 +63,8 @@ const CategoryProducts = () => {
                     title: product.itemName,
                     price: product.itemPrice,
                     image: product.itemImg,
-                    vendorName: product.vendorId.name
+                    vendorName: product.vendorId.name,
+                    vendorId: product.vendorId._id
                   }}
                 />
               </div>

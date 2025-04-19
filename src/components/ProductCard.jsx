@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/slices/cartSlice';
 
@@ -10,15 +10,15 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-      <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg bg-gray-200 dark:bg-gray-700">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col">
+      <div className="h-48 w-full overflow-hidden rounded-t-lg bg-gray-200 dark:bg-gray-700">
         <img
           src={product.image}
           alt={product.title}
           className="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105"
         />
       </div>
-      <div className="p-4">
+      <div className="p-4 flex-grow">
         <h3 className="text-lg font-medium text-gray-900 dark:text-white truncate">
           {product.title}
         </h3>
