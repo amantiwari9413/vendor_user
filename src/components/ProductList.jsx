@@ -11,7 +11,8 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/item/itembyCategoryId?categoryId=${categoryId}`);
+        
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/item/itembyCategoryId?categoryId=${categoryId}`);
         const data = await response.json();
         
         if (data.success) {

@@ -19,6 +19,10 @@ const Navbar = () => {
     navigate('/signin');
   };
 
+  const handleViewAllOrders = () => {
+    navigate('/orders');
+  };
+
   const handleSearch = async (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -119,12 +123,12 @@ const Navbar = () => {
             </button>
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
-                <Link
-                  to="/orders"
+                <button
+                  onClick={handleViewAllOrders}
                   className="text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Orders
-                </Link>
+                  View All Orders
+                </button>
                 <span className="text-gray-900 dark:text-gray-100">
                   Welcome, {user?.UserData?.userName || 'User'}
                 </span>
@@ -202,6 +206,11 @@ const Navbar = () => {
             <Link to="/vendors" className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-800">
               Vendors
             </Link>
+            {isAuthenticated && (
+              <Link to="/orders" className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-800">
+                Orders
+              </Link>
+            )}
             <div className="px-4 py-2">
               <form onSubmit={handleSearch} className="relative">
                 <input
@@ -220,6 +229,12 @@ const Navbar = () => {
             </div>
             {isAuthenticated ? (
               <>
+                <button
+                  onClick={handleViewAllOrders}
+                  className="block w-full text-left pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-800"
+                >
+                  View All Orders
+                </button>
                 <div className="px-4 py-2 text-gray-900 dark:text-gray-100">
                   Welcome, {user?.userName || 'User'}
                 </div>

@@ -58,7 +58,7 @@ const Checkout = () => {
 
       console.log('Order Data:', orderData);
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/order/placeOrder`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/order/createOrder`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

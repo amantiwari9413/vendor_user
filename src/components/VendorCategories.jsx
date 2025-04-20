@@ -11,7 +11,7 @@ const VendorCategories = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const categoriesResponse = await fetch(`http://localhost:3000/category/getCategoryByVendorId?vendorId=${vendorId}`);
+        const categoriesResponse = await fetch(`${import.meta.env.VITE_API_URL}/category/getCategoryByVendorId?vendorId=${vendorId}`);
         const categoriesData = await categoriesResponse.json();
         
         if (categoriesData.success) {
